@@ -1,31 +1,32 @@
 package main.java.pilha;
 
-public class Pilha {
+public class Pilha<T> {
 
-    private No<Integer> refNoEntradaPilha;
+    private No<T> refNoEntradaPilha;
 
     public Pilha() {
         this.refNoEntradaPilha = null;
     }
 
-    public void push(No<Integer> novoNo) {
+    public void push(T inteiro) {
+        No novoNo = new No(inteiro);
         No refAuxiliar = refNoEntradaPilha;
         refNoEntradaPilha = novoNo;
         refNoEntradaPilha.setRefProximoNo(refAuxiliar);
     }
 
-    public No<Integer> pop() {
+    public T pop() {
         if(!this.isEmpty()) {
             No noPoped = refNoEntradaPilha;
             refNoEntradaPilha = refNoEntradaPilha.getRefProximoNo();
-            return noPoped;
+            return (T) noPoped;
         }
 
         return null;
     }
 
-    public No<Integer> top() {
-        return this.refNoEntradaPilha;
+    public T top() {
+        return (T) this.refNoEntradaPilha;
     }
 
     public boolean isEmpty() {

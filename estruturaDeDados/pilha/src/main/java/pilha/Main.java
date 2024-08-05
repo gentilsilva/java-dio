@@ -4,20 +4,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Pilha pilha = new Pilha();
+        Pilha<Integer> pilha = new Pilha();
 
-        pilha.push(new No(1));
-        pilha.push(new No(2));
-        pilha.push(new No(3));
-        pilha.push(new No(4));
-        pilha.push(new No(5));
-        pilha.push(new No(6));
+        pilha.push(1);
+        pilha.push(2);
+        pilha.push(3);
+        pilha.push(4);
+        pilha.push(5);
+        pilha.push(6);
 
         System.out.println(pilha);
         System.out.println(pilha.pop());
         System.out.println(pilha);
 
-        pilha.push(new No(99));
+        pilha.push(99);
         System.out.println(pilha);
 
         System.out.println(pilha.top());
